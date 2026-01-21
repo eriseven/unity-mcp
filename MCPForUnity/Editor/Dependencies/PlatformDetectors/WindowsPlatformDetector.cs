@@ -31,7 +31,8 @@ namespace MCPForUnity.Editor.Dependencies.PlatformDetectors
             {
                 // Try running python directly first (works with Windows App Execution Aliases)
                 if (TryValidatePython("python3.exe", out string version, out string fullPath) ||
-                    TryValidatePython("python.exe", out version, out fullPath))
+                    TryValidatePython("python.exe", out version, out fullPath) ||
+                    TryValidatePython("python.bat", out version, out fullPath))
                 {
                     status.IsAvailable = true;
                     status.Version = version;
